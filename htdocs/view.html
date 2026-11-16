@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>temp-drive — shared file</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="panel view-panel">
+
+    <div class="eyebrow">&gt;_ temp-drive</div>
+
+    <div id="loadingState" class="view-loading">Looking this up…</div>
+
+    <div id="notFoundState" class="view-loading" hidden>This link is invalid, or the file has expired.</div>
+
+    <div id="fileState" hidden>
+      <div class="view-file-icon" id="viewFileIcon"></div>
+      <h1 class="view-file-name" id="viewFileName"></h1>
+      <p class="view-file-meta" id="viewFileMeta"></p>
+
+      <div id="unprotectedBlock" hidden>
+        <a class="btn-primary view-download-link" id="directDownloadLink">Download</a>
+      </div>
+
+      <div id="unprotectedTextBlock" hidden>
+        <div class="revealed-text-box">
+          <span id="unprotectedTextContent"></span>
+        </div>
+        <button class="btn-primary view-download-link" id="copyUnprotectedBtn">Copy</button>
+      </div>
+
+      <div id="protectedBlock" hidden>
+        <div id="passwordGate">
+          <input type="password" id="viewPasswordInput" placeholder="Enter password">
+          <button class="btn-primary" id="showBtn">Show</button>
+          <div class="msg msg-error" id="viewError" hidden></div>
+        </div>
+        <div id="revealedLink" hidden>
+          <p class="msg msg-ok">Password correct.</p>
+          <a class="btn-primary view-download-link" id="revealedDownloadLink">Download <span id="revealedFileName"></span></a>
+        </div>
+        <div id="revealedText" hidden>
+          <p class="msg msg-ok">Password correct.</p>
+          <div class="revealed-text-box">
+            <span id="revealedTextContent"></span>
+          </div>
+          <button class="btn-primary view-download-link" id="copyRevealedBtn">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="footnote"><a href="index.html" class="plain-link">&larr; open the full temp-drive</a></p>
+    <p class="credit">developed by Kasun</p>
+  </div>
+</div>
+
+<script src="view.js"></script>
+</body>
+</html>
